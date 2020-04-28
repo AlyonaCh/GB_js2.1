@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <form action="#" id="uForm">
+        <fieldset>
+            <label>
+                <input type="radio" name="Size" value="big" data-price="100" data-callories="40"> big
+            </label>
+            <label>
+                <input type="radio" name="Size" value="small" data-price="50" data-callories="20"> small
+            </label>
+        </fieldset>
+        <fieldset>
+            <label>
+                <input type="checkbox" name="Ingredients" value="cheese" data-price="10" data-callories="20"> Cheese
+            </label>
+            <label>
+                <input type="checkbox" name="Ingredients" value="salad" data-price="20" data-callories="5"> Salad
+            </label>
+            <label>
+                <input type="checkbox" name="Ingredients" value="potato" data-price="15" data-callories="10"> Potato
+            </label>
+            <label>
+                <input type="checkbox" name="Ingredients" value="seasoning" data-price="15" data-callories="0"> Seasoning
+            </label>
+            <label>
+                <input type="checkbox" name="Ingredients" value="sauce" data-price="20" data-callories="5"> Sauce
+            </label>
+        </fieldset>
+    </form>
+
+    <button id="okBtn">Calculate</button>
+    <div class="price">
+        <h3>price</h3>
+        <p></p>
+    </div>
+    <div class="callories">
+        <h3>callories</h3>
+        <p></p>
+    </div>
+
+</body>
+</html>
