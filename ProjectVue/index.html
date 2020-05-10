@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>eShop</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1 class="logo">Logo</h1>
+      <div>
+        <input type="text" class="goods-search" v-model="searchLine"/>
+        <button class="search-button" type="button" v-on:click="FilterGoods">Искать</button>
+      </div>
+      
+      <!-- <button class="cart-button" type="button">Корзина</button> -->
+      <div class="cart">
+        <button class="cart-button" type="button" v-on:click="isVisibleCart=!isVisibleCart">Корзина</button>
+        <div class="cart-block" v-show="isVisibleCart">
+          <div v-for="cartGood in cartGoods" :key="cartGood.id_product">
+            <div>
+              <img :src="cartImage" alt="Some image">
+              <div>
+                <p>{{ cartGood.product_name }}</p>
+                <p>Кол-во: {{ cartGood.quantity }}</p>
+                <p>${{ cartGood.price }} each</p>
+              </div>
+            </div>
+            <div>
+              <p>{{ cartGood.quantity * cartGood.price }}</p>
+              <button v-on:click="delCart(cartGood.id_product)">&times;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="goods-list">
+        <p v-show="messageStatus">there is\'t data</p>
+        <div class="goods-item" v-for="good in filteredGoods" :key="good.id_product">
+          <img :src="image" alt="Some img">
+          <div>
+            <h3>{{ good.product_name }}</h3>
+            <p>{{ good.price }}</p>
+            <button class="item-button" v-on:click="addCart(good.id_product)">Купить</button>
+            </div>
+          <!-- `<div class="goods-item" data-id="${this.id}">
+            <img src="${this.img}" alt="Some img">
+            <div>
+              <h3>${this.title}</h3>
+              <p>${this.price} $</p>
+              <button class="item-button" 
+                data-id="${this.id}"
+                data-title="${this.title}"
+                data-image="${this.img}"
+                data-price="${this.price}">Купить</button>
+            </div>
+          </div>` -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
