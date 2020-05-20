@@ -43,6 +43,7 @@ const app = new Vue({
       }else{
         find.quantity++;
       }
+      this.isVisibleCart = false;
     },
     delCart(id){
       let find = this.cartGoods.find (element => element.id_product === id);
